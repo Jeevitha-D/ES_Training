@@ -70,6 +70,7 @@ int main()
                 printf("Invalid");
                 break;
         }
+        display(h);
         printf("\nDo you want to continue?[Type Y/N] ");
         scanf("%s",option);
     }while(!strcmp(option,"Y"));
@@ -115,6 +116,12 @@ void Insertatposition(struct node **h,int item,int pos)
     nn->link=NULL;
     int index=0;
     temp=*h;
+    if(pos == 0)
+    {
+        nn->link=*h;
+        *h = nn;
+        return;
+    }
     while(index!=(pos-1) && h!=NULL)
     {
         index++;

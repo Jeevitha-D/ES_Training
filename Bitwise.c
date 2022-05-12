@@ -4,7 +4,7 @@ int checkpowerof2(int value);
 void set_bit(int value,int x);
 void clear_bit(int value,int x);
 void toggle_bit(int value,int x);
-void bit_set_or_not(int value,int x);
+int bit_set_or_not(int value,int x);
 void msb_bit(int value,int x);
 void lsb_bit(int value);
 void last_n_bit(int value,int x);
@@ -57,7 +57,13 @@ int main()
                 scanf("%d",&value);
                 printf("Enter the bit position\n");
                 scanf("%d",&x);
-                bit_set_or_not(value,x);
+                int result=bit_set_or_not(value,x);
+                {
+                    if(result==1)
+                        printf("True");
+                    else
+                        printf("False");
+                }
                 break;
             case 6:
                 printf("Enter the value\n");
@@ -120,13 +126,16 @@ void toggle_bit(int value,int x)
 {
     printf("%d",value ^ (1<<x));
 }
-void bit_set_or_not(int value,int x)
+int bit_set_or_not(int value,int x)
 {
-    printf("%d",value & (1<<x));
+    if((value & (1<<x) ) >> x == 1 )
+        return 1;
+    else
+        return 0;
 }
 void msb_bit(int value,int x)
 {
-    printf("%d",value & (1<<(x-1)));
+    printf("%d",(value & (1<<(x-1)))>>(x-1));
 }
 void lsb_bit(int value)
 {
