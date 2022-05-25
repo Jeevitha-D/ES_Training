@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/rently/Desktop/ES_Training/ASSIGNMENT_3/header.h
+
+/home/rently/Desktop/ES_Training/ASSIGNMENT_3/main.c
+stdio.h
+-
+header.h
+/home/rently/Desktop/ES_Training/ASSIGNMENT_3/header.h
+
